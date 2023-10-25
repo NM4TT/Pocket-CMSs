@@ -12,6 +12,8 @@ services:
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: root
       WORDPRESS_DB_NAME: sample
+    volumes:
+      - wordpress-data:/var/www/html
     restart: always
     
   drupal:
@@ -27,6 +29,8 @@ services:
       MYSQL_DATABASE: sample
     networks:
       - drupal-database
+    volumes:
+      - drupal-data:/var/www/html
     restart: always
 
   db-drupal:
@@ -57,5 +61,7 @@ networks:
   drupal-database:
 
 volumes:
+  wordpress-data:
+  drupal-data:
   db-drupal-data:
   db-wordpress-data:
