@@ -1,0 +1,5 @@
+FROM drupal:latest
+
+ENV MYSQL_USER=root
+ENV MYSQL_PASSWORD=root
+ENV MYSQL_DATABASE=sample
